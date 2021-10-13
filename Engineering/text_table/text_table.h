@@ -37,7 +37,8 @@ public:
         Right,
         Mid
     };
-    TextTable() = default;
+    TextTable() = default;  // cpp11 之前一般会提三大函数，无参构造，复制构造，赋值函数。cpp11之后 又加了两个 移动构造，移动赋值，总共有5大函数。如果写一个简单的类还要写这5个函数，太麻烦了，对于自己重新实现了的函数，未实现部分采取default可以省一点事。相对default,还有一个delete关键字，表示不允许这个函数调用。
+    // 单参数构造函数添加explicit关键字修饰，防止隐示调用和隐示类型转换
     explicit TextTable(const std::string& table_name)
         : m_name(table_name)
     {
