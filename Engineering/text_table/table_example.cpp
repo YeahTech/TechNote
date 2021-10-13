@@ -1,9 +1,9 @@
-#include "text_table.h"
 #include <iostream>
+#include "text_table.h"
 
 using namespace utils;
-int main(int argc, char **argv){
-    // 表名，全表填充 1 
+int main(int argc, char **argv) {
+    // 表名，全表填充 1
     TextTable table("detection");
     table.padding(1);
 
